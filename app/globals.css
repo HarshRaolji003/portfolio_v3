@@ -55,6 +55,7 @@
 
   /* Fluid typography scale (DESIGN.md) */
   --text-display: clamp(2.5rem, 5.5vw, 4rem);
+  --text-h1: clamp(2rem, 4vw, 3rem);
   --text-h2: clamp(1.5rem, 2.6vw, 2rem);
   --text-body-lg: clamp(1.125rem, 1.4vw, 1.25rem);
   --text-small: clamp(0.8125rem, 1vw, 0.875rem);
