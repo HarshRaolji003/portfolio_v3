@@ -11,7 +11,7 @@ export function Contact() {
       id="contact"
       tabIndex={-1}
       aria-labelledby="contact-heading"
-      className="py-(--section-y) focus:outline-none"
+      className="pt-8 pb-(--section-y) focus:outline-none md:pt-10"
     >
       <div className="mx-auto w-full max-w-(--container-max) px-5 md:px-8">
         {/* Eyebrow */}

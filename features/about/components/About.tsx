@@ -15,7 +15,7 @@ export function About() {
       id="about"
       tabIndex={-1}
       aria-labelledby="about-heading"
-      className="py-(--section-y) focus:outline-none"
+      className="pt-8 pb-(--section-y) focus:outline-none md:pt-10"
     >
       <div className="mx-auto grid w-full max-w-(--container-max) grid-cols-1 gap-8 px-5 md:grid-cols-12 md:gap-12 md:px-8">
         <div className="md:sticky md:top-[calc(var(--header-height)+2rem)] md:col-span-4 md:self-start lg:col-span-5">

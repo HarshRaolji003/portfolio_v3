@@ -7,7 +7,7 @@ import { dancingScript } from "@/styles/fonts";
  */
 export function Hero() {
   return (
-    <section className="flex min-h-[calc(100svh-var(--header-height))] items-center py-12 md:py-16">
+    <section className="pt-12 pb-(--section-y) md:pt-20">
       <div className="mx-auto w-full max-w-(--container-max) px-5 md:px-8">
         <p className="font-sans text-body-lg text-text-secondary">
           Hi, I&apos;m{" "}

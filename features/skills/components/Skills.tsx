@@ -6,7 +6,7 @@ export function Skills() {
       id="skills"
       tabIndex={-1}
       aria-labelledby="skills-heading"
-      className="py-(--section-y) focus:outline-none"
+      className="pt-8 pb-(--section-y) focus:outline-none md:pt-10"
     >
       <div className="mx-auto w-full max-w-(--container-max) px-5 md:px-8">
         {/* Eyebrow */}
