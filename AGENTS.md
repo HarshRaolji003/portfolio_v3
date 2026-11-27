@@ -14,6 +14,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
+## Node Version
+
+This project pins its Node.js version in `.nvmrc` (currently v24.12.0). Always run `nvm use` before executing any script or command to ensure the correct version is active.
+
 ## Project Documentation
 
 Use project documentation as a reference when relevant to the task. Do not read every documentation file by default.

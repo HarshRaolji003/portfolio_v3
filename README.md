@@ -33,6 +33,14 @@ Personal portfolio website built to showcase career experience and current statu
 
 ## Getting Started
 
+### Prerequisites
+
+This project uses [nvm](https://github.com/nvm-sh/nvm) to manage Node.js versions. The required version is specified in `.nvmrc`.
+
+```bash
+nvm use
+```
+
 ### 1. Install dependencies
 
 ```bash
