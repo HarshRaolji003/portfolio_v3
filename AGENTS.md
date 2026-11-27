@@ -27,11 +27,11 @@ Use project documentation as a reference when relevant to the task. Do not read 
 
 ## Rules
 
-Coding standards live in `rules/`. Read only the rules relevant to the current task.
+Read only the rules relevant to the current task.
 
-- [rules/code-quality.md](./rules/code-quality.md): Code quality principles and general development rules.
-- [rules/components.md](./rules/components.md): Component design and reusability guidelines.
-- [rules/performance.md](./rules/performance.md): Performance and optimization guidelines.
+- code-quality.md: Code quality principles and general development rules.
+- components.md: Component design and reusability guidelines.
+- performance.md: Performance and optimization guidelines.
 
 ## Core Behaviors
 
