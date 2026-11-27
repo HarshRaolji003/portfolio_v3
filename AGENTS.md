@@ -23,7 +23,7 @@ This project pins its Node.js version in `.nvmrc` (currently v24.12.0). Always r
 Use project documentation as a reference when relevant to the task. Do not read every documentation file by default.
 
 - [ARCHITECTURE.md](./ARCHITECTURE.md): Consult when creating features, modifying folder structures, organizing components, changing code organization, or making architectural decisions.
-- `DESIGN.md` *(planned)*: Consult when creating or modifying UI components, page layouts, styling, responsive behavior, or making visual design decisions.
+- [DESIGN.md](./DESIGN.md): Consult when creating or modifying UI components, page layouts, styling, responsive behavior, or making visual design decisions.
 
 ## Rules
 

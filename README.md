@@ -92,4 +92,4 @@ npm run start
 
 - [AGENTS.md](./AGENTS.md) — Agentic development rules and guidelines (How the AI agent should work, make decisions, implement, and verify.)
 - [ARCHITECTURE.md](./ARCHITECTURE.md) — How code should be organized, named, separated, and maintained.
-- `DESIGN.md` *(planned)* — UI/UX and visual design guidelines (How the website should look and feel, including design tokens and UI consistency.)
+- [DESIGN.md](./DESIGN.md) — UI/UX and visual design guidelines (How the website should look and feel, including design tokens and UI consistency.)
