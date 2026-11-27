@@ -12,6 +12,7 @@ Personal portfolio website built to showcase career experience and current statu
 - **Framework:** Next.js 16.4.6 (App Router, `cacheComponents` and `partialPrefetching` enabled)
 - **UI & Components:** React 19.3.0, Tailwind CSS 4.3.3 (`@tailwindcss/turbopack`), shadcn/ui (`@base-ui/react`, `base-nova` style)
 - **Icons:** `lucide-react`
+- **Animation:** Motion 14 (`motion/react`)
 - **Language:** TypeScript 5
 - **Linting:** ESLint 9 (`eslint-config-next`)
 

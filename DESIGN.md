@@ -82,6 +82,7 @@ Prefer borders plus soft shadow over heavy shadows.
 
 - Build on shadcn/ui (`components/ui/`, `base-nova` / `@base-ui/react`); map its variables (`--background`, `--primary` to coral, `--accent` to `--surface-low`, `--border`, `--radius`) to the tokens above in `app/globals.css`.
 - Icons: `lucide-react` (configured in `components.json`).
+- Animation: `motion` (`motion/react`); prefer GPU-composited properties (`transform`, `opacity`) and respect reduced-motion preferences.
 - Buttons: `--radius-sm`. Primary is coral; secondary is outlined with `--border-strong`.
 - Cards: `--surface-elevated`, `--border-subtle`, `--radius-lg`, `--shadow-soft`, lifting to `--shadow-lift` on hover.
 - Code blocks and inset panels: `--surface-low` with `--font-mono`.
