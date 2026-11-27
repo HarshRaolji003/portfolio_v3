@@ -10,7 +10,8 @@ Personal portfolio website built to showcase career experience and current statu
 ## Tech Stack
 
 - **Framework:** Next.js 16.4.6 (App Router, `cacheComponents` and `partialPrefetching` enabled)
-- **UI:** React 19.3.0, Tailwind CSS 4.3.3 (`@tailwindcss/turbopack`), `@heroicons/react`
+- **UI & Components:** React 19.3.0, Tailwind CSS 4.3.3 (`@tailwindcss/turbopack`), shadcn/ui (`@base-ui/react`, `base-nova` style)
+- **Icons:** `lucide-react`
 - **Language:** TypeScript 5
 - **Linting:** ESLint 9 (`eslint-config-next`)
 
@@ -18,13 +19,17 @@ Personal portfolio website built to showcase career experience and current statu
 
 ```text
 .
-├── app/                # App Router pages, layout, and global styles
+├── app/                # App Router pages, layout, and global styles (globals.css)
+├── components/         # UI primitives (components/ui/ managed by shadcn/ui)
 ├── features/           # Feature-based modules (about, projects, contact, etc.)
-├── shared/             # Shared components, hooks, utils, and types
-├── styles/             # Global and shared styles
+├── lib/                # Core helpers (e.g., utils.ts for shadcn/ui)
+├── shared/             # Shared domain components, hooks, utils, and types
+├── styles/             # Additional shared styles
 ├── public/             # Static assets
+├── .nvmrc              # Pinned Node.js version
 ├── AGENTS.md           # Agentic development rules and guidelines
 ├── ARCHITECTURE.md     # Folder structure, naming conventions, and code rules
+├── components.json     # shadcn/ui configuration and path aliases
 ├── eslint.config.mjs   # ESLint configuration
 ├── next.config.ts      # Next.js and Turbopack configuration
 ├── package.json        # Dependencies and npm scripts

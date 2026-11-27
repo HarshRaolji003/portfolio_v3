@@ -14,12 +14,15 @@ We follow a **Feature-Based Architecture** to organize the codebase.
 
 ```text
 .
-├── app/                    # Routing only: layouts, pages, metadata
+├── app/                    # Routing, layouts, metadata, and globals.css (theme tokens)
+│   ├── globals.css
 │   ├── layout.tsx
 │   ├── page.tsx
 │   └── blog/
 │       └── [slug]/
 │           └── page.tsx
+├── components/
+│   └── ui/                 # shadcn/ui primitives (@/components/ui)
 ├── features/               # One folder per page section/domain
 │   ├── about/
 │   │   ├── components/
@@ -31,21 +34,22 @@ We follow a **Feature-Based Architecture** to organize the codebase.
 │       ├── components/
 │       ├── api/            # Form submission handler
 │       └── index.ts
-│
+├── lib/                    # Core library utilities (@/lib, e.g., utils.ts)
 ├── shared/
 │   ├── components/
 │   ├── hooks/
 │   ├── utils/
 │   └── types/
 │
-└── styles/             # Global CSS, theme tokens
+└── styles/                 # Additional shared CSS modules/tokens if needed
 ```
 
 ### Structure Rules
 
-- `app/` handles routing only. Put UI and logic in `features/`.
+- `app/` handles routing and global setup (`layout.tsx`, `globals.css`). Put UI and domain logic in `features/`.
+- `components/ui/` holds reusable shadcn/ui base primitives configured via `components.json`; `lib/` holds core helpers (such as `cn` in `lib/utils.ts`).
 - A feature owns its components, hooks, and types. Other code imports from the feature's `index.ts` only, never from its internals.
-- Features must not import from other features. If code is needed by two or more, move it to `shared/`.
+- Features must not import from other features. If domain code is needed by two or more, move it to `shared/`.
 - Create subfolders (`hooks/`, `types/`, `api/`) only when needed. Don't add empty ones.
 
 ## 3. Naming Conventions
