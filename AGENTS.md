@@ -1,3 +1,9 @@
+# Agent Guidelines
+
+## Project Overview
+
+See [README](./README.md) for the project overview, tech stack, and scripts. Read it only when needed, not on every task.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 ## This is NOT the Next.js you know
@@ -7,3 +13,27 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Project Documentation
+
+Use project documentation as a reference when relevant to the task. Do not read every documentation file by default.
+
+- [ARCHITECTURE.md](./ARCHITECTURE.md): Consult when creating features, modifying folder structures, organizing components, changing code organization, or making architectural decisions.
+- `DESIGN.md` *(planned)*: Consult when creating or modifying UI components, page layouts, styling, responsive behavior, or making visual design decisions.
+
+## Rules
+
+Coding standards live in `rules/`. Read only the rules relevant to the current task.
+
+- [rules/code-quality.md](./rules/code-quality.md): Code quality principles and general development rules.
+- [rules/components.md](./rules/components.md): Component design and reusability guidelines.
+- [rules/performance.md](./rules/performance.md): Performance and optimization guidelines.
+
+## Core Behaviors
+
+- First, understand the scope of the task and identify which guidelines are relevant.
+- Read only the documentation needed for the current task.
+- Follow the existing codebase patterns and applicable project guidelines.
+- If a task involves both architecture and UI design, consult both documents.
+- For simple changes that do not affect architecture or design, avoid unnecessary documentation reads.
+- If a required document does not exist, proceed using established project patterns unless clarification is necessary.
