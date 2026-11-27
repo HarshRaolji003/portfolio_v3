@@ -11,7 +11,7 @@ export function Header() {
     <header className="sticky top-0 z-40 h-(--header-height) w-full border-b border-border-subtle bg-background">
       <div className="mx-auto flex h-full w-full max-w-(--container-max) items-center justify-between px-5 md:px-8">
         <Link
-          href="#"
+          href="/"
           aria-label="HR — Harsh Raolji"
           className={cn(
             dancingScript.className,

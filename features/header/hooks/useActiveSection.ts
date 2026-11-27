@@ -2,6 +2,11 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
+function getHashFragment(href: string): string {
+  const hashIndex = href.indexOf("#");
+  return hashIndex === -1 ? "" : href.slice(hashIndex);
+}
+
 function getScrolledHref(hrefs: readonly string[]): string {
   const headerHeight =
     document.querySelector("header")?.getBoundingClientRect().height ?? 64;
@@ -10,7 +15,9 @@ function getScrolledHref(hrefs: readonly string[]): string {
 
   const sections = hrefs
     .map((href) => {
-      const element = document.getElementById(href.slice(1));
+      const fragment = getHashFragment(href);
+      if (!fragment) return null;
+      const element = document.getElementById(fragment.slice(1));
       if (!element) return null;
       const rect = element.getBoundingClientRect();
       return { href, top: rect.top, bottom: rect.bottom };
@@ -100,12 +107,13 @@ export function useActiveSection(hrefs: readonly string[]) {
       }
 
       const hash = window.location.hash;
+      const matchingHref = hrefs.find((href) => getHashFragment(href) === hash);
       const isPlaceholderHash =
         hash !== "" &&
-        hrefs.includes(hash) &&
+        matchingHref !== undefined &&
         document.getElementById(hash.slice(1)) === null;
 
-      const nextHref = isPlaceholderHash ? hash : "";
+      const nextHref = isPlaceholderHash ? matchingHref : "";
       setActiveHref((prev) => (prev === nextHref ? prev : nextHref));
     };
 
@@ -128,8 +136,9 @@ export function useActiveSection(hrefs: readonly string[]) {
         selectHref("");
         return;
       }
-      if (hrefs.includes(hash)) {
-        selectHref(hash);
+      const matchingHref = hrefs.find((href) => getHashFragment(href) === hash);
+      if (matchingHref) {
+        selectHref(matchingHref);
         return;
       }
       scheduleSync();

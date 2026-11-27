@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -14,10 +15,10 @@ import {
 import { useActiveSection } from "../hooks/useActiveSection";
 
 const NAV_ITEMS = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 const NAV_HREFS = NAV_ITEMS.map((item) => item.href);
@@ -39,7 +40,7 @@ export function HeaderNav() {
         {NAV_ITEMS.map(({ label, href }) => {
           const isActive = activeHref === href;
           return (
-            <a
+            <Link
               key={href}
               href={href}
               aria-current={isActive ? "location" : undefined}
@@ -58,7 +59,7 @@ export function HeaderNav() {
                   className="absolute inset-x-1 bottom-2 h-0.5 rounded-full bg-primary"
                 />
               )}
-            </a>
+            </Link>
           );
         })}
       </nav>
@@ -88,7 +89,7 @@ export function HeaderNav() {
               {NAV_ITEMS.map(({ label, href }) => {
                 const isActive = activeHref === href;
                 return (
-                  <a
+                  <Link
                     key={href}
                     href={href}
                     aria-current={isActive ? "location" : undefined}
@@ -111,7 +112,7 @@ export function HeaderNav() {
                       )}
                     />
                     {label}
-                  </a>
+                  </Link>
                 );
               })}
             </nav>
