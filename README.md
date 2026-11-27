@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# portfolio_v3
+
+Personal portfolio website built to showcase career experience and current status for recruiters, clients, and peers.
+
+## Features
+
+- `TODO: Define site sections/pages (e.g., About, Experience, Projects, Blog, Contact)`
+- `TODO: Define content/blog authoring and storage approach`
+
+## Tech Stack
+
+- **Framework:** Next.js 16.4.6 (App Router, `cacheComponents` and `partialPrefetching` enabled)
+- **UI & Components:** React 19.3.0, Tailwind CSS 4.3.3 (`@tailwindcss/turbopack`), shadcn/ui (`@base-ui/react`, `base-nova` style)
+- **Icons:** `lucide-react`
+- **Animation:** Motion 14 (`motion/react`)
+- **Language:** TypeScript 5
+- **Linting:** ESLint 9 (`eslint-config-next`)
+
+## Project Structure
+
+```text
+.
+├── app/                # App Router pages, layout, and global styles (globals.css)
+├── components/         # UI primitives (components/ui/ managed by shadcn/ui)
+├── features/           # Feature-based modules (about, projects, contact, etc.)
+├── lib/                # Core helpers (e.g., utils.ts for shadcn/ui)
+├── shared/             # Shared domain components, hooks, utils, and types
+├── styles/             # Additional shared styles
+├── public/             # Static assets
+├── .nvmrc              # Pinned Node.js version
+├── AGENTS.md           # Agentic development rules and guidelines
+├── ARCHITECTURE.md     # Folder structure, naming conventions, and code rules
+├── components.json     # shadcn/ui configuration and path aliases
+├── eslint.config.mjs   # ESLint configuration
+├── next.config.ts      # Next.js and Turbopack configuration
+├── package.json        # Dependencies and npm scripts
+└── tsconfig.json       # TypeScript configuration
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+This project uses [nvm](https://github.com/nvm-sh/nvm) to manage Node.js versions. The required version is specified in `.nvmrc`.
+
+```bash
+nvm use
+```
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Environment setup
+
+Copy `.env.example` to `.env.local` and fill in the required values (`TODO: Add .env.example once external services are configured`):
+
+```bash
+cp .env.example .env.local
+```
+
+### 3. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Script | Command | Description |
+| --- | --- | --- |
+| `dev` | `npm run dev` | Start the Next.js development server |
+| `build` | `npm run build` | Create an optimized production build |
+| `start` | `npm run start` | Run the production server |
+| `lint` | `npm run lint` | Run ESLint across the codebase |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`TODO: Add hosting platform, deployment steps, and live URL.`
 
-## Deploy on Vercel
+## Related Docs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [AGENTS.md](./AGENTS.md) — Agentic development rules and guidelines (How the AI agent should work, make decisions, implement, and verify.)
+- [ARCHITECTURE.md](./ARCHITECTURE.md) — How code should be organized, named, separated, and maintained.
+- [DESIGN.md](./DESIGN.md) — UI/UX and visual design guidelines (How the website should look and feel, including design tokens and UI consistency.)
