@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useState } from "react";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useActiveSection } from "../hooks/useActiveSection";
 
 const NAV_ITEMS = [
   { label: "Work", href: "#work" },
@@ -19,18 +20,7 @@ const NAV_ITEMS = [
   { label: "Contact", href: "#contact" },
 ] as const;
 
-function subscribeToHash(callback: () => void) {
-  window.addEventListener("hashchange", callback);
-  return () => window.removeEventListener("hashchange", callback);
-}
-
-function getHashSnapshot() {
-  return window.location.hash;
-}
-
-function getServerHashSnapshot() {
-  return "";
-}
+const NAV_HREFS = NAV_ITEMS.map((item) => item.href);
 
 /**
  * Responsive navigation links for the site header.
@@ -38,11 +28,7 @@ function getServerHashSnapshot() {
  */
 export function HeaderNav() {
   const [open, setOpen] = useState(false);
-  const activeHash = useSyncExternalStore(
-    subscribeToHash,
-    getHashSnapshot,
-    getServerHashSnapshot
-  );
+  const { activeHref, selectHref } = useActiveSection(NAV_HREFS);
 
   return (
     <>
@@ -51,12 +37,13 @@ export function HeaderNav() {
         className="hidden md:flex md:items-center md:gap-6"
       >
         {NAV_ITEMS.map(({ label, href }) => {
-          const isActive = activeHash === href;
+          const isActive = activeHref === href;
           return (
             <a
               key={href}
               href={href}
               aria-current={isActive ? "location" : undefined}
+              onClick={() => selectHref(href)}
               className={cn(
                 "relative inline-flex min-h-11 items-center rounded-sm px-1 text-sm transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
                 isActive
@@ -99,13 +86,16 @@ export function HeaderNav() {
               className="flex flex-col gap-1 px-4 pt-12 pb-6"
             >
               {NAV_ITEMS.map(({ label, href }) => {
-                const isActive = activeHash === href;
+                const isActive = activeHref === href;
                 return (
                   <a
                     key={href}
                     href={href}
                     aria-current={isActive ? "location" : undefined}
-                    onClick={() => setOpen(false)}
+                    onClick={() => {
+                      selectHref(href);
+                      setOpen(false);
+                    }}
                     className={cn(
                       "flex min-h-11 items-center gap-3 rounded-md px-3 text-base transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
                       isActive
