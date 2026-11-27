@@ -52,6 +52,13 @@
 @theme {
   --shadow-soft: 0 4px 20px rgba(82, 70, 70, 0.05);
   --shadow-lift: 0 8px 28px rgba(82, 70, 70, 0.09);
+
+  /* Fluid typography scale (DESIGN.md) */
+  --text-display: clamp(2.5rem, 5.5vw, 4rem);
+  --text-h1: clamp(2rem, 4vw, 3rem);
+  --text-h2: clamp(1.5rem, 2.6vw, 2rem);
+  --text-body-lg: clamp(1.125rem, 1.4vw, 1.25rem);
+  --text-small: clamp(0.8125rem, 1vw, 0.875rem);
 }
 
 :root {
@@ -73,6 +80,7 @@
   --border-strong: rgba(82, 70, 70, 0.2);
 
   /* Layout */
+  --header-height: 4rem;
   --container-max: 1200px;
   --section-y: clamp(80px, 10vw, 128px);
 
@@ -108,5 +116,11 @@
   }
   html {
     @apply font-sans;
+    scroll-padding-top: var(--header-height);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 }
